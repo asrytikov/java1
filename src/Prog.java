@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -249,7 +250,7 @@ public class Prog {
             System.out.print(cont);
             cont--;
         }
-*/
+
         int cont2 = 100;
         do{
             System.out.print(cont2);
@@ -257,8 +258,52 @@ public class Prog {
         } while (cont2<0);
 
 
+        for (int i = 0; i < 5; i++) {
+            System.out.print(i + " ");
+            if (i == 2) {
+                break;
+            }
+        }
 
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i + " ");
+            if (i == 2) {
+                continue;
+            }
+            System.out.println("Print");
+        }
 
+        try{
+            //команда
+        }catch (Exception ex){
+            //команда
+        }
+        finally {
+            //команды
+        }
+*/
+
+        int num, deno;
+        Scanner input = new Scanner(System.in);
+        try {
+            System.out.println("Введите число");
+            num = input.nextInt();
+            System.out.println("Введите делитель");
+            deno = input.nextInt();
+            System.out.println("Результат: "+num/deno);
+        }
+        catch (InputMismatchException exx){
+            System.out.println("Вы ввели не число");
+        }
+        catch (ArithmeticException ex2){
+            System.out.println("Деление не возможно");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+        finally {
+            System.out.println("Конец вычислений");
+        }
     }
 
 }
